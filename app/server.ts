@@ -1,5 +1,5 @@
 const process = require('process');
-import {app} from "./app";
+import {app} from "./src";
 import http from 'http'
 
 const port = process.env.PORT || 3000;

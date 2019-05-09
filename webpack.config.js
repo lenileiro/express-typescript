@@ -3,7 +3,7 @@ var webpack = require('webpack');
 var nodeExternals = require('webpack-node-externals');
 
 var server = {
-    entry: './src/index.ts',
+    entry: './app/src/server.ts',
     target: 'node',
     mode: 'production',
     externals: [nodeExternals()],
