@@ -8,7 +8,8 @@
         "build:server": "tsc && webpack -w --env=server_build",
         "start:server": "npm run build:server & nodemon server.js",
         "lint": "npx eslint 'app/**/*.ts'",
-        "lint:fix": "npx prettier-eslint 'app/**/*.ts' 'package.json' --write"
+        "lint:fix": "npx prettier-eslint 'app/**/*.ts' 'package.json' --write",
+        "coverall": "jest --coverage --coverageReporters=text-lcov | coveralls"
     },
     "husky": {
         "hooks": {
@@ -62,6 +63,7 @@
         "babel-loader": "^8.0.0-beta.6",
         "babel-plugin-transform-class-properties": "^6.24.1",
         "babel-plugin-transform-object-rest-spread": "^6.26.0",
+        "coveralls": "^3.0.3",
         "css-loader": "^2.1.1",
         "enzyme": "^3.9.0",
         "enzyme-adapter-react-16": "^1.12.1",
