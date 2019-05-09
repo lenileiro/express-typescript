@@ -6,7 +6,20 @@
     "scripts": {
         "test": "jest",
         "build:server": "tsc && webpack -w --env=server_build",
-        "start:server": "npm run build:server & nodemon server.js"
+        "start:server": "npm run build:server & nodemon server.js",
+        "lint": "npx eslint 'app/**/*.ts'",
+        "lint:fix": "npx prettier-eslint 'app/**/*.ts' 'package.json' --write"
+    },
+    "husky": {
+        "hooks": {
+            "pre-commit": "lint-staged"
+        }
+    },
+    "lint-staged": {
+        "*.js": [
+            "npm run lint:fix",
+            "git add"
+        ]
     },
     "dependencies": {
         "@grpc/proto-loader": "^0.1.0",
@@ -78,8 +91,8 @@
         "type": "git",
         "url": "git+https://github.com/lenileiro/react.git"
     },
-    "keywords": [],
-    "author": "",
+    "keywords": ["react", "server side render react", "express js", "GRPC client"],
+    "author": "Anthony Leiro",
     "license": "ISC",
     "bugs": {
         "url": "https://github.com/lenileiro/react/issues"
